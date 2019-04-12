@@ -1,0 +1,26 @@
+<h1>signup</h1>
+<h2 align="center">Sign up</h2>
+
+<form method="post" action="{% url '注册页面' %}" align="center">
+    {% csrf_token %}
+    <br>
+    用户名:
+        <br>
+    <input type="text" name="用户名">
+        <br>
+    {{ 用户名错误 }}
+        <br>
+
+    密码:
+    <br>
+    <input type="password" name="密码">
+    <br>
+    确认密码:
+    <br>
+    <input type="password" name="确认密码">
+    <br>
+    {{ 密码错误 }}
+    <br>
+    <input type="submit" value="立即注册">
+    <br>
+</form>
