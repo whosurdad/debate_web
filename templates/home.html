@@ -1,0 +1,9 @@
+<h1>home page</h1>
+
+{% for team in teams.all %}
+{{ team.description }}
+{% endfor %}
+
+{% for game in games.all %}
+{{ game.description }}
+{% endfor %}
