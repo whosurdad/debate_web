@@ -1,0 +1,46 @@
+<h1>产品发布</h1>
+<h2 align="center">发布新比赛</h2>
+<br>
+<form method="POST" action="{% url '发布页面' %}" align = 'center' enctype="multipart/form-data">
+    {% csrf_token %}
+    比赛名称:
+    <br>
+    <input type="text" name="比赛名称">
+    <br>
+    <br>
+    介绍:
+    <br>
+    <textarea cols=100 rows=10 name="介绍"></textarea>
+    <br>
+    <br>
+    比赛LOGO:
+    <input type="file" name="比赛LOGO">
+    <br>
+    <br>
+    email:
+    <br>
+    <input type="text" name="email">
+    <br>
+    <br>
+    team1:
+    <br>
+    <input type="text" name="team1">
+    <br>
+    <br>
+    team2:
+    <br>
+    <input type="text" name="team2">
+    <br>
+    <br>
+    主席:
+    <br>
+    <input type="text" name="主席">
+    <br>
+    <br>
+    比分:
+    <br>
+    <input type="text" name="比分">
+    <br>
+    <br>
+    <input type="submit" value="发布">
+</form>
