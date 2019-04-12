@@ -23,4 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home,name = '主页'),
     path('account/',include('account.urls')),
+    path('games/',include('games.urls')),
+    path('teams/',include('teams.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
