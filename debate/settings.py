@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-
+#import drf_haystack
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'haystack',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -115,6 +116,21 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = False
+
+#配置haystack
+HAYSTACK_CONNECTIONS = {
+    'default': {
+    # 这里配置搜索引擎 路劲为:项目应用名+whoosh_cn_backend+WhooshEngine
+        'ENGINE': 'haystack.backends.whoosh_cn_backend.WhooshEngine',
+        #后面rebuild_index,生成的索引文件目录
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+        'INCLUDE_SPELLING': True,
+    },
+}
+#设置分页显示的数据量
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 4
+#当数据库改变是，自动更新索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 
 # Static files (CSS, JavaScript, Images)
