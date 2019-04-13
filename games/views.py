@@ -34,3 +34,6 @@ def publish(request):
         game.save()
 
         return redirect('主页')
+
+def home(request):
+    return render(request,'games.html')
