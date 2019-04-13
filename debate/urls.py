@@ -25,4 +25,6 @@ urlpatterns = [
     path('account/',include('account.urls')),
     path('games/',include('games.urls')),
     path('teams/',include('teams.urls')),
+    path(r'search/', include('haystack.urls')),
+
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
