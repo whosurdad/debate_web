@@ -1,5 +1,6 @@
 from django.db import models
 import django.utils.timezone as timezone
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Games (models.Model):
@@ -13,5 +14,6 @@ class Games (models.Model):
     team2 = models.CharField(default='队伍2', max_length=20)
     zhuxi = models.CharField('主席',default='主席名',max_length=10)
     score = models.CharField('比分',max_length=3,default='0:0')
+    publisher = models.ForeignKey(User,on_delete=models.CASCADE)
     def __str__(self):
         return self.name

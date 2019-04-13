@@ -1,11 +1,14 @@
 from django.db import models
 import django.utils.timezone as timezone
+from django.contrib.auth.models import User
+
 # Create your models here.
 
 class Teams (models.Model):
     name = models.CharField('队伍名',default='队伍名',max_length=10)
     description = models.CharField(default='在这里写队伍简介',max_length=100)
     image = models.ImageField('队伍头像',default='default.png',upload_to='images/')
+    leader = models.ForeignKey(User,on_delete=models.CASCADE)
     email = models.EmailField('队长邮箱',max_length=50)
     mate1 = models.CharField('队员1',default='队员1', max_length=20)
     m1 = models.CharField('队员1联系方式', default='10086', max_length=20)
