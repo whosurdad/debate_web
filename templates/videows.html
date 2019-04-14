@@ -24,14 +24,12 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>
-                            <!--                            {% if user.is_authenticated %}-->
-                            <!--                                <a href="#">注销</a>-->
-                            <!--                                <form method="POST" action="Index.html"></form>-->
-                            <!--                                {% csrf_token %}-->
-                            <!--                            <input type="hidden">-->
-                            <!--                            {% else %}-->
-                            <a href="javascript:void(0)" onclick="add()">登录</a>
-                            <!--                            {% endif %}-->
+                            {% if user.is_authenticated %}
+                                <a href="{% url '退出页面' %}" target="_blank">退出</a>
+                            {% else %}
+                                <a href="{% url '登录页面' %}" target="_blank">登录</a>
+                                <a href="{% url '注册页面' %}" target="_blank">注册</a>
+                            {% endif %}
                         </li>
                         <li>
                             <a href="live.html">直播</a>

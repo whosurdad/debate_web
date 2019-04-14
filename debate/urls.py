@@ -26,5 +26,6 @@ urlpatterns = [
     path('games/',include('games.urls')),
     path('teams/',include('teams.urls')),
     path(r'search/', include('haystack.urls')),
+    path('captcha', include('captcha.urls')),
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
