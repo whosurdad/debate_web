@@ -1,0 +1,16 @@
+a{
+    font-family: 宋体;
+    text-decoration: none;
+    font-size: 25px;
+    color: #96f2fb;
+}
+a:hover{
+    font-size: 30px;
+    text-decoration: none;
+    transform: rotate(360deg);
+    color: #ffb3e6;
+    transition-delay: 30ms;
+    transition-duration: 750ms;
+    transition-timing-function: ease-in-out;
+    transform-origin: center;
+}
