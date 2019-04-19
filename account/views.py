@@ -1,34 +1,41 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm,UserChangeForm,PasswordChangeForm
+from .forms import 自定义注册表单,自定义编辑表单,自定义登录表单
+from .models import 普通会员表
 # Create your views here.
 
 def signup(request):
-    if request.method == 'GET':
-        return render(request,'signup.html')
-    elif request.method == 'POST':
-        user_name = request.POST['用户名']
-        password1 = request.POST['密码']
-        password2 = request.POST['确认密码']
-        try:
-            User.objects.get(username=user_name)
-            return render(request,'signup.html',{'用户名错误':'该用户名已存在'})
-        except User.DoesNotExist:
-            if password1 == password2:
-                User.objects.create_user(username=user_name,password=password1)
-                return redirect('主页')
-            else:
-                return render(request, 'signup.html', {'密码错误': '两次输入的密码不一致'})
+    if request.method == 'POST':
+        注册表单 = 自定义注册表单(request.POST)
+        if 注册表单.is_valid():
+            注册表单.save()
+            user = auth.authenticate(username = 注册表单.cleaned_data['username'],password = 注册表单.cleaned_data['password1'])
+            user.email = 注册表单.cleaned_data['email']
+            普通会员表(用户=user,昵称=注册表单.cleaned_data['昵称'],生日=注册表单.cleaned_data['生日']).save()
+            auth.login(request,user)
+            return redirect('主页')
+    elif request.method == 'GET':
+        注册表单 = 自定义注册表单()
+
+    内容 = {'注册表单':注册表单}
+    return render(request,'signup.html',内容)
 
 
 def login(request):
     if request.method == 'GET':
-        return render(request, 'login.html')
+        登录表单 = 自定义登录表单()
+        内容 = {'登录表单':登录表单,'user':request.user}
+        return render(request, 'login.html',内容)
 
     elif request.method == 'POST':
-        user_name = request.POST['用户名']
-        pass_word = request.POST['密码']
-        user = auth.authenticate(username=user_name,password=pass_word)
+        登录表单 = 自定义登录表单(data = request.POST)
+        if 登录表单.is_valid():
+            user_name = 登录表单.cleaned_data['username']
+            pass_word = 登录表单.cleaned_data['password']
+            user = auth.authenticate(username=user_name,password=pass_word)
         if user is None:
             return render(request, 'login.html', {'错误': '用户名或密码错误'})
         else:
@@ -40,11 +47,39 @@ def logout(request):
         auth.logout(request)
         return redirect('主页')
 
+@login_required(login_url = '登录页面')
 def usercenter(request):
-    pass
+    内容 = {'user':request.user}
+    return render(request,'user_center.html',内容)
 
+@login_required(login_url = '登录页面')
 def edit(request):
-    pass
+    if request.method == 'POST':
+        编辑表单 = 自定义编辑表单(request.POST,instance=request.user)
+        if 编辑表单.is_valid():
+            编辑表单.save()
 
+            request.user.普通会员表.昵称 = 编辑表单.cleaned_data['昵称']
+            request.user.普通会员表.生日 = 编辑表单.cleaned_data['生日']
+            request.user.普通会员表.save()
+            #普通会员表(用户=user, 昵称=编辑表单.cleaned_data['昵称'], 生日=编辑表单.cleaned_data['生日']).save()
+            return redirect('主页')
+    elif request.method == 'GET':
+        编辑表单 = 自定义编辑表单(instance=request.user)
+
+
+    内容 = {'编辑表单': 编辑表单,'用户':request.user}
+    return render(request, 'edit_profile.html', 内容)
+
+@login_required(login_url = '登录页面')
 def changepassword(request):
-    pass
+    if request.method == 'POST':
+        改密表单 = PasswordChangeForm(data=request.POST, user=request.user)
+        if 改密表单.is_valid():
+            改密表单.save()
+            return redirect('登录页面')
+    elif request.method == 'GET':
+        改密表单 = PasswordChangeForm(user=request.user)
+
+    内容 = {'改密表单': 改密表单, '用户': request.user}
+    return render(request, 'change_password.html', 内容)
