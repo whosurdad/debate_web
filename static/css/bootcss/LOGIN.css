@@ -6,7 +6,7 @@
 
     height: 2300px; /*高度，不能百分百*/
 
-    background: #131418; /*背景色*/
+    background: #fcfcfd; /*背景色*/
 
     position: absolute;
 
@@ -26,7 +26,7 @@
     position: absolute;
     margin-top: 8%;
     margin-left: 49.75%;
-    background-color: #d4d4d4;
+    background-color: #131418;
 
 }
 #contes { /* 弹框的页面*/
@@ -36,7 +36,7 @@
 
     height: 2300px; /*高度，不能百分百*/
 
-    background: #131418; /*背景色*/
+    background: #fcfcfd; /*背景色*/
 
     position: absolute;
 

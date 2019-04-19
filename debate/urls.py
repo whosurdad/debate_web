@@ -25,7 +25,7 @@ urlpatterns = [
     path('account/',include('account.urls')),
     path('games/',include('games.urls')),
     path('teams/',include('teams.urls')),
-    path(r'search/', include('haystack.urls')),
+    path('search/', include('haystack.urls')),
     path('captcha', include('captcha.urls')),
 
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root = settings.STATICFILES_DIRS)
