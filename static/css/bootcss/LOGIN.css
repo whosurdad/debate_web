@@ -1,0 +1,51 @@
+#all_light { /*整个弹窗的页面*/
+
+    opacity: 1; /*透明度*/
+
+    width: 49.5%; /*宽度*/
+
+    height: 2300px; /*高度，不能百分百*/
+
+    background: #fcfcfd; /*背景色*/
+
+    position: absolute;
+
+    margin-top: 0;
+
+    margin-left: 0; /*定位*/
+
+    display: block; /*隐藏*/
+
+    z-index: -999; /*覆盖*/
+
+
+}
+#middle{
+    width: 0.5%;
+    height: 500px;
+    position: absolute;
+    margin-top: 8%;
+    margin-left: 49.75%;
+    background-color: #131418;
+
+}
+#contes { /* 弹框的页面*/
+    opacity: 1; /*透明度*/
+
+    width: 49.5%; /*宽度*/
+
+    height: 2300px; /*高度，不能百分百*/
+
+    background: #fcfcfd; /*背景色*/
+
+    position: absolute;
+
+    margin-top: 0;
+
+    margin-left: 50.5%; /*定位*/
+
+    display: block; /*隐藏*/
+
+    z-index: -999; /*覆盖*/
+}
+

@@ -1,0 +1,77 @@
+<h1>组队页面</h1>
+<h2 align="center">组建新队伍</h2>
+<br>
+<form method="POST" action="{% url '组队页面' %}" align = 'center' enctype="multipart/form-data">
+    {% csrf_token %}
+    队伍名称:
+    <br>
+    <input type="text" name="队伍名">
+    <br>
+    <br>
+    介绍:
+    <br>
+    <textarea cols=100 rows=10 name="介绍"></textarea>
+    <br>
+    <br>
+    队伍LOGO:
+    <input type="file" name="队伍LOGO">
+    {{ 错误 }}
+    <br>
+    <br>
+    队长email:
+    <br>
+    <input type="text" name="email">
+    <br>
+    <br>
+    队员1:
+    <br>
+    <input type="text" name="member1">
+    <br>
+    <br>
+    队员1联系方式:
+    <br>
+    <input type="text" name="member11">
+    <br>
+    <br>
+    队员2:
+    <br>
+    <input type="text" name="member2">
+    <br>
+    <br>
+    队员2联系方式:
+    <br>
+    <input type="text" name="member22">
+    <br>
+    <br>
+    队员3:
+    <br>
+    <input type="text" name="member3">
+    <br>
+    <br>
+    队员3联系方式:
+    <br>
+    <input type="text" name="member33">
+    <br>
+    <br>
+    队员4:
+    <br>
+    <input type="text" name="member4">
+    <br>
+    <br>
+    队员4联系方式:
+    <br>
+    <input type="text" name="member44">
+    <br>
+    <br>
+    队员5:
+    <br>
+    <input type="text" name="member5">
+    <br>
+    <br>
+    队员5联系方式:
+    <br>
+    <input type="text" name="member55">
+    <br>
+    <br>
+    <input type="submit" value="发布">
+</form>
