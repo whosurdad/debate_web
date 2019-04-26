@@ -1,0 +1,8 @@
+<h1>队伍总览</h1>
+<a href="{% url '组队页面' %}">组队页面</a>
+{% for team in teams.all %}
+    <a href="{{ team.id }}" >{{ team.name }}</a>
+    {{ team.description }}
+    <img src="../media/{{ team.image }}">
+
+{% endfor %}

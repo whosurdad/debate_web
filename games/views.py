@@ -2,10 +2,11 @@ from django.shortcuts import render ,redirect
 from django.contrib.auth.decorators import login_required
 from .models import Games
 import django.utils.timezone as timezone
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
-@login_required()
+@login_required(login_url = '登录页面')
 def publish(request):
     if request.method == 'GET':
         return render(request,'publish.html')
@@ -36,4 +37,9 @@ def publish(request):
         return redirect('主页')
 
 def home(request):
-    return render(request,'games.html')
+    games = Games.objects
+    return render(request,'games.html',{"games":games})
+
+def detail(request,game_id):
+    game = get_object_or_404(Games,pk=game_id)
+    return render(request, 'gamedetail.html', {"game":game})

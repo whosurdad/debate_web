@@ -1,18 +1,39 @@
-<form method="post" action="/account/signup/">
-    {% csrf_token %}
-    <p><label for="id_username">用户名:</label> <input type="text" name="username" maxlength="150" autofocus required
-                                                    id="id_username">
-    {{ 注册表单.errors.username }}
-    <p><label for="id_password1">密码:</label> <input type="password" name="password1" required id="id_password1">
-        {{ 注册表单.errors.password1 }}
-    <p><label for="id_password2">密码确认:</label> <input type="password" name="password2" required id="id_password2">
-        {{ 注册表单.errors.username2 }}
-    <p><label for="id_email">电子邮件地址:</label> <input type="email" name="email" maxlength="254" id="id_email"></p>
-        {{ 注册表单.errors.email }}
-    <p><label for="id_昵称">昵称:</label> <input type="text" name="昵称" maxlength="50" id="id_昵称"></p>
-    <p><label for="id_生日">生日:</label> <input type="date" name="生日" id="id_生日"></p>
-        {{ 注册表单.验证码 }}
-        {{ 注册表单.errors.验证码 }}
-    <button type="submit">注册</button>
-
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maples Debate</title>
+    <link rel="stylesheet" href="../../static/css/signup.css">
+    <link rel="stylesheet" href="../../static/css/errors.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+</head>
+<body>
+<div class="box">
+    <div class="head-line">
+        <div class="head-line-r"></div>
+        <div class="head-line-l"></div>
+        <span class="tit"><i class="fas fa-cannabis" style="color: #ff613e"></i>注册</span>
+        <div class="head-line-l"></div>
+        <div class="head-line-r"></div>
+    </div>
+    <div style="padding-top: 20px;">
+        <form method="post" action="/account/signup/">
+            {% csrf_token %}
+            <p><label for="id_昵称"><span class="box-font">昵称</span></label> <input type="text" name="昵称" maxlength="50" id="id_昵称"></p>
+            <p><label for="id_username"><span class="box-font">用户名</span> </label> <input type="text" name="username" maxlength="150" autofocus required id="id_username">
+                <div class="box-error">{{ 注册表单.errors.username }}</div>
+            <p><label for="id_password1"><span class="box-font">密码</span></label> <input type="password" name="password1" required id="id_password1">
+                <div class="box-error">{{ 注册表单.errors.password1 }}</div>
+            <p><label for="id_password2"><span class="box-font">确认密码</span></label> <input type="password" name="password2" required id="id_password2">
+                <div class="box-error">{{ 注册表单.errors.username2 }}</div>
+            <p><label for="id_email"><span class="box-font">邮箱</span></label> <input type="email" name="email" maxlength="254" id="id_email"></p>
+                <div class="box-error">{{ 注册表单.errors.email }}</div>
+            <p><label for="id_生日"><span class="box-font">出生日期</span></label> <input type="date" name="生日" id="id_生日"></p>
+            {{ 注册表单.验证码 }}
+            <div class="box-error">{{ 注册表单.errors.验证码 }}</div>
+            <input type="submit"><span class="box-font"></span></input>
+        </form>
+    </div>
+</div>
+</body>
+</html>

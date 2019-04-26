@@ -142,3 +142,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+CAPTCHA_IMAGE_SIZE = (220,50)
+CAPTCHA_FONT_SIZE = 35

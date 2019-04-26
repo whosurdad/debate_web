@@ -25,22 +25,16 @@ def signup(request):
 
 
 def login(request):
-    if request.method == 'GET':
-        登录表单 = 自定义登录表单()
-        内容 = {'登录表单':登录表单,'user':request.user}
-        return render(request, 'login.html',内容)
-
-    elif request.method == 'POST':
-        登录表单 = 自定义登录表单(data = request.POST)
+     if request.method == 'POST':
+        登录表单 = 自定义登录表单(data=request.POST)
         if 登录表单.is_valid():
-            user_name = 登录表单.cleaned_data['username']
-            pass_word = 登录表单.cleaned_data['password']
-            user = auth.authenticate(username=user_name,password=pass_word)
-        if user is None:
-            return render(request, 'login.html', {'错误': '用户名或密码错误'})
-        else:
-            auth.login(request, user)
+            user = auth.authenticate(request,username = 登录表单.cleaned_data['username'],password=登录表单.cleaned_data['password'])
+            auth.login(request,user)
             return redirect('主页')
+     else:
+            登录表单 = 自定义登录表单()
+     内容 = {'登录表单':登录表单,'user':request.user}
+     return render(request,'login.html',内容)
 
 def logout(request):
     #if request.method == 'POST':
