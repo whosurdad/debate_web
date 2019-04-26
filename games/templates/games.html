@@ -1,1 +1,8 @@
 <h1>比赛目录</h1>
+<a href="{% url '发布页面' %}">发布比赛讯息</a>
+{% for game in games.all %}
+    <a href="{{ game.id }}" >{{ game.name }}</a>
+    {{ game.description }}
+    <img src="../media/{{ game.image }}">
+
+{% endfor %}

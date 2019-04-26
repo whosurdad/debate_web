@@ -1,0 +1,147 @@
+body{
+    background: url("../img/sign up.jpg");
+    background-repeat: no-repeat;
+    background-size: 1920px 1080px ;
+    margin: 0;
+    top: 0;
+    background-attachment: fixed;
+}
+.head-line-l{
+    border: #08f2ff 2px solid;
+    display: inline;
+    margin: 0;
+
+ }
+.head-line-r{
+    width: 360px;
+    border:  #08f2ff solid;
+    display: inline-block;
+    margin: 0;
+    transform: translate(2px);
+}
+.head-line{
+    position: absolute;
+    width: 980px;
+    height: 28px;
+    padding: 0;
+    margin: 0px;
+    margin-bottom: 280px;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    display: inline;
+}
+.tit{
+    height: 0;
+    line-height: 0;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 40px;
+    background: none;
+    text-align: center;
+    background: none;
+    color: #ffb5d8;
+}
+.top{
+    margin-top: 4%;
+    margin-left: 50%;
+    display: inline-flex;
+    word-spacing: 18px;
+    transform: translate(-50%,-50%);
+    width: 590px;
+    text-align: center;
+    height: 50px;  .
+border-radius: 24px;
+}
+.top:hover{
+    border: 3px solid #3498db;
+    transition-duration: 600ms;
+}
+.top-a a{
+    margin: 7px auto;
+    display: inline-flex;
+    text-decoration: none;
+    color: #50d160;
+    font-size: 25px;
+    font-family: 幼圆;
+    font-weight: bold;
+}
+.top-a a:hover{
+    color: #3498db;
+    font-size: 28px;
+    transition-duration: 700ms;
+    transition-timing-function: ease-in-out;
+}
+.top-i i{
+    font-size: 40px;
+    color: #ff4a01;
+}
+.box{
+    width: 900px;
+    padding: 50px;
+    margin-top:30%;
+    margin-bottom: 20%;
+    margin-left: 50%;
+    transform: translate(-50%,-50%);
+    background: #191919;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.box input[type = "text"],.box input[type = "password"],.box input[type="email"]{
+    border:0;
+    background: none;
+    display: block;
+    margin: auto auto;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 330px;
+    height: 30px;
+    outline: none;
+    color: white;
+    border-radius: 37px;
+    transition: 250ms;
+}
+.box input[type = "text"]:focus,.box input[type = "password"]:focus,.box input[type = "email"]:focus{
+    width: 300px;
+    border-color: #2ecc71;
+}
+.box input[type = "submit"]{
+    border:0;
+    background: none;
+    width: 160px;
+    height: 50px;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #08f2ff;
+    padding: 14px 40px;
+    outline: none;
+    color: #08f2ff;
+    border-radius: 24px;
+    transition: 300ms;
+    cursor: pointer;
+}
+.box input[type = "submit"]:hover{
+    background: #08f2ff;
+    color: white;
+}
+.box-font{
+    font-size: 28px;
+    font-family: 华文琥珀;
+    font-weight: lighter;
+    color: #08f2ff;
+    opacity: 1;
+    text-align: left;
+}
+.box input[type = "date"]
+{
+    border: #3498db 2px solid;
+    border-radius: 20px;
+    color: #08f2ff;
+    cursor: pointer;
+    height: 30px;
+    background: none;
+    width: 220px;
+}

@@ -1,0 +1,242 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url("../img/59c4a53ff1bc8.jpg");
+}
+ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+}
+ul li{
+    list-style: none;
+    margin: 0 20px;
+    transition: 0.5s;
+}
+ul li a{
+    display: block;
+    position: relative;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+ul:hover li a{
+    transform: scale(1.5);
+    opacity: .1;
+    filter: blur(5px);
+
+}
+ul:hover li a:hover{
+    transform: scale(1.2);
+    opacity: 1;
+    filter: blur(0);
+    word-spacing: 5px;
+}
+ul li a:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    transition: transform 0.5s;
+    transform-origin: right;
+    transform: scaleX(0);
+    z-index: -1;
+}
+ul li a:hover:before
+{
+    transition: transform 0.5s;
+    transform-origin: left;
+    transform: scaleX(1);
+}
+.top{
+    margin-top: 4%;
+    margin-left: 50%;
+    display: inline-flex;
+    word-spacing: 18px;
+    transform: translate(-50%,-50%);
+    width: 900px;
+    text-align: center;
+    height: 50px;  .
+    border-radius: 24px;
+}
+.top-a a{
+    margin: 7px auto;
+    display: inline-flex;
+    text-decoration: none;
+    color: #50d160;
+    font-size: 25px;
+    font-family: 幼圆;
+    font-weight: bold;
+}
+.top-a a:hover{
+    color: #3498db;
+    font-size: 28px;
+    transition-duration: 700ms;
+    transition-timing-function: ease-in-out;
+}
+.top-i i{
+    font-size: 40px;
+    color: #ff4a01;
+}
+.head-line-l{
+    border: #08f2ff 2px solid;
+    display: inline;
+    margin: 0;
+
+}
+.head-line-r{
+    width: 360px;
+    border:  #08f2ff solid;
+    display: inline-block;
+    margin: 0;
+    transform: translate(2px);
+}
+.head-line{
+    position: absolute;
+    width: 1200px;
+    height: 28px;
+    margin: 0 50%;
+    transform: translate(-90.5%,-50%);
+    margin-bottom: 280px;
+    text-align: center;
+    display: inline;
+}
+.tit{
+    height: 56px;
+    line-height: 0;
+    margin: 0;
+    padding: 0 20px;
+    font-size: 32px;
+    background: none;
+    text-align: center;
+    align-items: center;
+    background: none;
+    color: #ff7f51;
+}
+.top{
+    margin-top: 4%;
+    margin-left: 50%;
+    display: inline-flex;
+    word-spacing: 18px;
+    transform: translate(-38%,-50%);
+    width: 900px;
+    text-align: center;
+    height: 50px;  .
+    border-radius: 24px;
+}
+.top-a a{
+    margin: 7px auto;
+    display: inline-flex;
+    text-decoration: none;
+    color: #50d160;
+    font-size: 20px;
+    font-family: 幼圆;
+    font-weight: bold;
+}
+.top-a a:hover{
+    color: #e4ba35;
+    font-size: 28px;
+    transition-duration: 700ms;
+    transition-timing-function: ease-in-out;
+}
+.top-i i{
+    font-size: 40px;
+    color: #ff4a01;
+}
+
+.box h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.box-back-1{
+    width: 900px;
+    height: 600px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: black;
+    opacity: 0.3;
+}
+.box{
+    width: 900px;
+    height: 600px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: none;
+    text-align: center;
+    align-items: center;
+    opacity: 0.8;
+}
+.box input[type = "text"],.box input[type = "password"],.box input[type="email"]{
+    border:0;
+    background: none;
+    display: block;
+    margin: 19px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 250px;
+    height: 30px;
+    outline: none;
+    color: white;
+    border-radius: 37px;
+    transition: 250ms;
+}
+.box input[type = "text"]:focus,.box input[type = "password"]:focus,.box input[type = "email"]:focus{
+    width: 330px;
+    border-color: #2ecc71;
+}
+.box input[type = "submit"]{
+    border:0;
+    background: none;
+    width: 160px;
+    height: 50px;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #08f2ff;
+    padding: 14px 40px;
+    outline: none;
+    color: #08f2ff;
+    border-radius: 24px;
+    transition: 250ms;
+    cursor: pointer;
+}
+.box input[type = "submit"]:hover{
+    background: #08f2ff;
+    color: white;
+}
+.box-font{
+    font-size: 28px;
+    font-family: 华文琥珀;
+    font-weight: lighter;
+    color: #08f2ff;
+    opacity: 1;
+}
+.box-form{
+    line-height: 50px;
+}
+.restart{
+    position: absolute;
+    top: 53.5% ;
+    left: 58%;
+    font-size: 22px;
+    color: #ff4a01;
+
+}

@@ -1,11 +1,14 @@
-from django.shortcuts import render ,redirect
+from django.shortcuts import render ,redirect,get_object_or_404
 from .models import Teams
 from django.db import models
 from django.contrib.auth.models import User
 import django.utils.timezone as timezone
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
+@login_required(login_url = '登录页面')
 def mkteams(request):
     if request.method == 'GET':
          return render(request,'mkteams.html')
@@ -49,3 +52,10 @@ def mkteams(request):
 
         return redirect('主页')
 
+def home(request):
+    teams = Teams.objects
+    return render(request,'teams.html',{"teams":teams})
+
+def detail(request,team_id):
+    team = get_object_or_404(Teams,pk=team_id)
+    return render(request,'teamdetail.html',{"team":team})

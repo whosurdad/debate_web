@@ -3,32 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>个人中心</title>
+    <link rel="stylesheet" href="../../static/css/editX.css">
+    <link rel="stylesheet" href="../../static/css/errors.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 </head>
 <body>
-    <a href="{% url '主页' %}">回到主页</a>
-    <a href="{% url '退出页面' %}">退出</a>
-    <a href="{% url '编辑个人信息' %}">编辑个人信息</a>
-    <a href="{% url '修改密码' %}">修改密码</a>
-    {{ 编辑表单.errors }}
-<form method="POST" action="">
-    {% csrf_token %}
-        <p><label for="id_username">用户名:</label>
-            <input type="text" name="username" value="handsome" maxlength="150" required id="id_username">
-            <span class="helptext">必填。150个字符或者更少。包含字母，数字和仅有的@/./+/-/_符号。</span>
-        </p>
-    <p>
-        <label for="id_email">电子邮件地址:</label>
-        <input type="email" name="email" value="yysxiaoyu@hotmail.com" maxlength="254" id="id_email">
-    </p>
-<p>
-    <label for="id_昵称">昵称:</label>
-    <input type="text" name="昵称" maxlength="50" id="id_昵称" value="{{ user.普通会员表.昵称 }}">
-</p>
-<p>
-    <label for="id_生日">生日:</label>
-    <input type="text" name="生日" id="id_生日" value="{{ user.普通会员表.生日 }}">
-</p>
-    <button type="submit">提交</button>
-</form>
+    <div class="top">
+        <div class="top-i">
+            <i class="fas fa-cannabis"></i>
+        </div>
+        <div class="top-a">
+            <ul>
+                <li><a href="{% url '主页' %}">回到主页</a></li>
+                <li><a href="{% url '退出页面' %}">退出</a></li>
+                <li><a href="{% url '编辑个人信息' %}">编辑个人信息</a></li>
+                <li><a href="{% url '修改密码' %}">修改密码</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-error">{{ 编辑表单.errors }}</div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="head-line">
+                <div class="head-line-r"></div>
+                <div class="head-line-l"></div>
+                <span class="tit">编辑</span>
+                <div class="head-line-l"></div>
+                <div class="head-line-r"></div>
+            </div>
+            <div class="box-form">
+                <label for="id_username"><span class="box-font">用户名</span></label>
+                <input type="text" name="username" value="handsome" maxlength="150" required id="id_username">
+{#                <span class="helptext">必填。150个字符或者更少。包含字母，数字和仅有的@/./+/-/_符号。</span>#}
+                <label for="id_email"><span class="box-font">邮箱</span></label>
+                <input type="email" name="email" value="yysxiaoyu@hotmail.com" maxlength="254" id="id_email">
+                <label for="id_昵称"><span class="box-font">昵称</span></label>
+                <input type="text" name="昵称" maxlength="50" id="id_昵称" value="{{ user.普通会员表.昵称 }}">
+                <label for="id_生日"><span class="box-font">生日</span></label>
+                <input type="date" name="生日" id="id_生日" value="{{ user.普通会员表.生日 }}">
+                <input type="submit"></input>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

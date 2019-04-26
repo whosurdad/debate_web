@@ -2,81 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>标题交给何方耀</title>
+    <title>Maples Debate</title>
     <link rel="stylesheet" href="../static/css/index.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 </head>
 <body>
-<div class="services-section">
-    <div class="grayscreen"></div>
-    <div class="inner-width">
-        <h1 class="section-title">欢迎来到DBground</h1>
-        <div class="border"></div>
-        <div class="services-container">
-
-            <div class="service-box">
-                <div class="service-icon">
-                    <i class="fas fa-paint-brush"></i>
+    <div class="services-section">
+        <div class="inner-width">
+            <h1 class="section-title">欢迎来到&nbsp;<span style="color: #f45a8d; " >MPDB</span>&nbsp;ground</h1>
+            <div class="service-log">
+                {% if user.is_authenticated %}
+                    <a href="{% url '退出页面' %}" class="service-a">注销</a>&nbsp;<span style="font-size: x-large">|</span>&nbsp;<a class="service-a" href="{%  url '个人中心' %}">个人中心</a>
+                {% else %}
+                    <a href="{% url '注册页面' %}" class="service-a">注册</a>&nbsp;<span style="font-size: x-large">|</span>&nbsp;<a class="service-a" href="{%  url '登录页面' %}">登陆</a>
+                {% endif %}
+            </div>
+            <div class="border"></div>
+            <div class="services-container">
+                <div class="service-box" onclick="window.location.href='{% url '比赛目录' %}'">
+                    <div class="service-icon">
+                        <i class="fas fa-cannabis"></i>
+                    </div>
+                    <div class="service-title">Debate push</div>
+                    <div class="service-desc">
+                        占格子占格子占格子占格子占格子占格子占格子占格子占格子
+                    </div>
                 </div>
-                <div class="service-title">Debate push</div>
-                <div class="service-desc">
-                    Lorem ipsum dolor sit amet,consectetur adipisicing elit.
+
+                <div class="service-box" onclick="window.location.href='{% url '队伍总览' %}'">
+                    <div class="service-icon">
+                        <i class="fas fa-cannabis"></i>
+                    </div>
+                    <div class="service-title">Teams</div>
+                    <div class="service-desc">
+                        占格子占格子占格子占格子占格子占格子占格子占格子占格子
+                    </div>
+                </div>
+
+                <div class="service-box" onclick="window.location.href='#'">
+                    <div class="service-icon">
+                        <i class="fas fa-cannabis"></i>
+                    </div>
+                    <div class="service-title">Videos</div>
+                    <div class="service-desc">
+                        占格子占格子占格子占格子占格子占格子占格子占格子占格子
+                    </div>
+                </div>
+
+                <div class="service-box" onclick="window.location.href='#'">
+                    <div class="service-icon">
+                        <i class="fas fa-cannabis"></i>
+                    </div>
+                    <div class="service-title">Live</div>
+                    <div class="service-desc">
+                        占格子占格子占格子占格子占格子占格子占格子占格子占格子
+                    </div>
+                </div>
+
+                <div class="service-box" onclick="window.location.href='#'">
+                    <div class="service-icon">
+                        <i class="fas fa-cannabis"></i>
+                    </div>
+                    <div class="service-title">Online competition</div>
+                    <div class="service-desc">
+                        占格子占格子占格子占格子占格子占格子占格子占格子占格子
+                    </div>
+                </div>
+
+                <div class="service-box" onclick="window.location.href='#'">
+                    <div class="service-icon">
+                        <i class="fas fa-cannabis"></i>
+                    </div>
+                    <div class="service-title">Sharing furum</div>
+                    <div class="service-desc">
+                        占格子占格子占格子占格子占格子占格子占格子占格子占格子
+                    </div>
                 </div>
             </div>
-
-            <div class="service-box" onclick="window.location.href='videos.html'">
-                <div class="service-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <div class="service-title">Videos</div>
-                <div class="service-desc">
-                    Lorem ipsum dolor sit amet,consectetur adipisicing elit.
-                </div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <div class="service-title">Live</div>
-                <div class="service-desc">
-                    Lorem ipsum dolor sit amet,consectetur adipisicing elit.
-                </div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <div class="service-title">Online competition</div>
-                <div class="service-desc">
-                    Lorem ipsum dolor sit amet,consectetur adipisicing elit.
-                </div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <div class="service-title">Sharing furum</div>
-                <div class="service-desc">
-                    Lorem ipsum dolor sit amet,consectetur adipisicing elit.
-                </div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <div class="service-title">join us</div>
-                <div class="service-desc">
-                    Lorem ipsum dolor sit amet,consectetur adipisicing elit.
-                </div>
-            </div>
-
         </div>
     </div>
-</div>
 </body>
 </html>
